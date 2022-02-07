@@ -85,7 +85,7 @@ const Archive = () => {
                 scrollThreshold={"50%"}
                 loader={
                     <div className="container">
-                        <div className="row row-cols-lg-5 row-cols-md-4 row-cols-2">
+                        <div className="row row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2">
                             {
                                 [...Array(count).keys()].map((i) => {
                                     return (
@@ -98,7 +98,7 @@ const Archive = () => {
                 }
             >
                 <div className="container">
-                    <div className="row row-cols-lg-5 row-cols-md-4 row-cols-2">
+                    <div className="row row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2">
                         {imgs && imgs.map(img => {
                             return (
                                 <div key={"" + img} class="p-1 grow-cc show-cc">
