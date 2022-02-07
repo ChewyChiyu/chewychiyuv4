@@ -23,11 +23,14 @@ const Navigation = () => {
     return (
         <>
             <div class="container py-4 d-flex flex-row flex-wrap justify-content-center align-items-center">
-                <h1 class="display-6" style={{ letterSpacing: "1rem", paddingLeft: "1rem" }}> CHEWYCHIYU </h1>
-                <span class="flex-fill" />
-                <a className="btn" href="https://www.instagram.com/chewychiyu/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-facebook"></i></a>
-                <a className="btn" href="https://www.instagram.com/chewyceramics/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-instagram"></i></a>
-                <a className="btn" href="https://www.twitter.com/chewychiyu/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-twitter"></i></a>
+                <h1 class="display-6" style={{ letterSpacing: "1rem", paddingLeft: "1rem", fontWeight: 400 }}> CHEWYCHIYU </h1>
+                <span class="flex-fill d-none d-md-block" />
+                <div>
+                    <a className="btn" href="https://www.instagram.com/chewychiyu/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-facebook"></i></a>
+                    <a className="btn" href="https://www.instagram.com/chewyceramics/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-instagram"></i></a>
+                    <a className="btn" href="https://www.twitter.com/chewychiyu/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-twitter"></i></a>
+                </div>
+
             </div>
             <button id="scroll-top-button" class="btn position-fixed scroll-top-button text-white py-0 px-2 shadow-none" onClick={() => $("html, body").animate({ scrollTop: 0 }, "fast")}> <p style={{ fontSize: "150%", fontWeight: 200 }}>&#65087;</p> </button>
         </>
