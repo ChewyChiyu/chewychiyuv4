@@ -92,7 +92,7 @@ const Archive = () => {
                         <div className="row row-cols-lg-5 row-cols-md-4 row-cols-2">
                             {
                                 [...Array(count).keys()].map((i) => {
-                                    return (<img key={"" + i} src="/images/placeholder.jpeg" className="shimmer img-fluid p-1" style={{ opacity: 0.15 }} />)
+                                    return (<img key={"" + i} src="/images/placeholder.jpeg" alt="Placeholder" className="shimmer img-fluid p-1" style={{ opacity: 0.15 }} />)
                                 })
                             }
                         </div>
@@ -104,7 +104,7 @@ const Archive = () => {
                         {imgs && imgs.map(img => {
                             return (
                                 <div key={"" + img} class="p-1 grow-cc show-cc">
-                                    <img id={"placeholder " + img} src="/images/placeholder.jpeg" className="shimmer img-fluid" style={{ opacity: 0.15 }} />
+                                    <img id={"placeholder " + img} src="/images/placeholder.jpeg" alt="Placeholder" className="shimmer img-fluid" style={{ opacity: 0.15 }} />
                                     <img id={"" + img} src={img} className="img-fluid loading-img" alt="Ceramic Art Piece" draggable="false" onClick={() => onClickImg(img)} onLoad={() => removeLoader(img)} />
                                 </div>
                             )
