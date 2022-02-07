@@ -22,7 +22,7 @@ const Navigation = () => {
 
     return (
         <>
-            <div class="container p-4 d-flex flex-row align-items-center">
+            <div class="container py-4 d-flex flex-row flex-wrap justify-content-center align-items-center">
                 <h1 class="display-6" style={{ letterSpacing: "1rem", paddingLeft: "1rem" }}> CHEWYCHIYU </h1>
                 <span class="flex-fill" />
                 <a className="btn" href="https://www.instagram.com/chewychiyu/" role="button" target="_blank" rel="noreferrer noopener"><i className="bi-facebook"></i></a>
