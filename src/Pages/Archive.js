@@ -64,27 +64,29 @@ const Archive = () => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <img src="/images/placeholder.jpeg" id="modal-placeholder" className="img-fluid shimmer" style={{ opacity: 0.15 }} />
-                <div id="modal-img" style={{ display: "none" }}>
-                    <ReactImageMagnify
-                        isHintEnabled={true}
-                        enlargedImagePosition={"over"}
-                        className = "show-cc"
-                        {...{
-                            smallImage: {
-                                alt: clickedImg,
-                                isFluidWidth: true,
-                                onLoad: () => onModalLoad(),
-                                src: clickedImg,
-                            },
-                            largeImage: {
-                                alt: clickedImg,
-                                src: clickedImg,
-                                width: 1800,
-                                height: 1800,
-                            },
-                        }} />
-                </div>
+                <Modal.Body className="p-0">
+                    <img src="/images/placeholder.jpeg" id="modal-placeholder" alt="placeholder" className="img-fluid shimmer" style={{ opacity: 0.15, height: "100%", width: "100%" }} />
+                    <div id="modal-img" style={{ display: "none" }}>
+                        <ReactImageMagnify
+                            isHintEnabled={true}
+                            enlargedImagePosition={"over"}
+                            className="show-cc"
+                            {...{
+                                smallImage: {
+                                    alt: clickedImg,
+                                    isFluidWidth: true,
+                                    onLoad: () => onModalLoad(),
+                                    src: clickedImg,
+                                },
+                                largeImage: {
+                                    alt: clickedImg,
+                                    src: clickedImg,
+                                    width: 1800,
+                                    height: 1800,
+                                },
+                            }} />
+                    </div>
+                </Modal.Body>
             </Modal>
 
             <InfiniteScroll
