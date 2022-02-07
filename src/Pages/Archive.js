@@ -57,7 +57,6 @@ const Archive = () => {
             <Modal show={showModal} onHide={() => setShowModal(false)}
                 size="md"
                 aria-labelledby="contained-modal-title-vcenter"
-                className="show-cc"
                 centered
             >
                 <ReactImageMagnify
