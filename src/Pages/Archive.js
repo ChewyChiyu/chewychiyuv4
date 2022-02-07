@@ -28,6 +28,11 @@ const Archive = () => {
         setShowModal(true)
     }
 
+    function onModalLoad() {
+        document.getElementById("modal-placeholder").style.display = "none"
+        document.getElementById("modal-img").style.display = "block"
+    }
+
     return (
         <>
 
@@ -59,24 +64,29 @@ const Archive = () => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <ReactImageMagnify
-                    isHintEnabled={true}
-                    enlargedImagePosition={"over"}
-                    {...{
-                        smallImage: {
-                            alt: clickedImg,
-                            isFluidWidth: true,
-                            src: clickedImg,
-                        },
-                        largeImage: {
-                            alt: clickedImg,
-                            src: clickedImg,
-                            width: 1800,
-                            height: 1800,
-                        },
-                    }} />
+                <img src="/images/placeholder.jpeg" id="modal-placeholder" className="img-fluid shimmer" style={{ opacity: 0.15 }} />
+                <div id="modal-img" style={{ display: "none" }}>
+                    <ReactImageMagnify
+                        isHintEnabled={true}
+                        enlargedImagePosition={"over"}
+                        className = "show-cc"
+                        {...{
+                            smallImage: {
+                                alt: clickedImg,
+                                isFluidWidth: true,
+                                onLoad: () => onModalLoad(),
+                                src: clickedImg,
+                            },
+                            largeImage: {
+                                alt: clickedImg,
+                                src: clickedImg,
+                                width: 1800,
+                                height: 1800,
+                            },
+                        }} />
+                </div>
             </Modal>
-            
+
             <InfiniteScroll
                 dataLength={imgs.length}
                 next={fetchData}
