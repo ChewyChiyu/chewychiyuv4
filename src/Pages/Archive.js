@@ -20,17 +20,11 @@ const Archive = () => {
 
     function fetchData() {
         var fetchCount = Math.min(count, maxCount - imgs.length)
-        var nextBatch = Array.from(Array(fetchCount).keys()).map(i => { return "images/Assests/no" + (imgs.length + i) + ".jpeg" })
+        var nextBatch = Array.from(Array(fetchCount).keys()).map(i => { return "images/SmallAssests/no" + (imgs.length + i) + " Small.jpeg" })
         setImgs([...imgs].concat([...nextBatch]))
     }
-
-    function removeLoader(img) {
-        document.getElementById("placeholder " + img).style.display = "none";
-        document.getElementById("" + img).classList.remove("loading-img")
-    }
-
     function onClickImg(img) {
-        setClickedImg(img)
+        setClickedImg("images/Assests/no" + ("" + img).replace(/[^0-9]/g, '') + ".jpeg")
         setShowModal(true)
     }
 
@@ -106,8 +100,7 @@ const Archive = () => {
                         {imgs && imgs.map(img => {
                             return (
                                 <div key={"" + img} class="p-1 grow-cc show-cc">
-                                    <img id={"placeholder " + img} src="/images/placeholder.jpeg" alt="Placeholder" draggable="false" className="shimmer img-fluid" style={{ opacity: 0.15 }} />
-                                    <img id={"" + img} src={img} className="img-fluid loading-img" alt="Ceramic Art Piece" draggable="false" onClick={() => onClickImg(img)} onLoad={() => removeLoader(img)} />
+                                    <img id={"" + img} src={img} className="img-fluid" alt="Ceramic Art Piece" draggable="false" onClick={() => onClickImg(img)} />
                                 </div>
                             )
                         })
