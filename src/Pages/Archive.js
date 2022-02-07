@@ -1,0 +1,123 @@
+import { React } from 'react';
+import { useEffect, useState } from 'react';
+import InfiniteScroll from 'react-infinite-scroll-component';
+import ReactImageMagnify from 'react-image-magnify';
+import Helmet from 'react-helmet';
+import { Modal } from 'react-bootstrap';
+const Archive = () => {
+
+    const [clickedImg, setClickedImg] = useState()
+    const [showModal, setShowModal] = useState(false)
+    const [imgs, setImgs] = useState([])
+    const count = 20
+    const maxCount = 179
+
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+
+    function fetchData() {
+        var fetchCount = Math.min(count, maxCount - imgs.length)
+        var nextBatch = Array.from(Array(fetchCount).keys()).map(i => { return "images/Assests/no" + (imgs.length + i) + ".jpeg" })
+        setImgs([...imgs].concat([...nextBatch]))
+    }
+
+    function removeLoader(img) {
+        document.getElementById("placeholder " + img).style.display = "none";
+        document.getElementById("" + img).classList.remove("loading-img")
+    }
+
+    function onClickImg(img) {
+        setClickedImg(img)
+        setShowModal(true)
+    }
+
+    return (
+        <>
+
+            <Helmet>
+                <title>CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art </title>
+                <meta name="title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
+
+                <meta name="description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
+
+                <meta property="og:url" content="https://chewychiyu.com/" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
+                <meta property="og:description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
+                <meta property="og:image" content="https://chewychiyu.com/images/websiteIcon.jpeg" />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta property="twitter:domain" content="chewychiyu.com" />
+                <meta property="twitter:url" content="https://www.chewychiyu.com" />
+                <meta name="twitter:title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
+                <meta name="twitter:description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
+                <meta name="twitter:image" content="https://chewychiyu.com/images/websiteIcon.jpeg" />
+
+                <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+            </Helmet>
+
+
+            <Modal show={showModal} onHide={() => setShowModal(false)}
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <ReactImageMagnify
+                    isHintEnabled={true}
+                    enlargedImagePosition={"over"}
+                    {...{
+                        smallImage: {
+                            alt: clickedImg,
+                            isFluidWidth: true,
+                            src: clickedImg,
+                        },
+                        largeImage: {
+                            alt: clickedImg,
+                            src: clickedImg,
+                            width: 1800,
+                            height: 1800,
+                        },
+                    }} />
+            </Modal>
+            <InfiniteScroll
+                dataLength={imgs.length}
+                next={fetchData}
+                hasMore={imgs.length < maxCount}
+                scrollThreshold={"50%"}
+                loader={
+                    <div className="container">
+                        <div className="row row-cols-lg-5 row-cols-md-4 row-cols-2">
+                            {
+                                [...Array(count).keys()].map((i) => {
+                                    return (<img key={"" + i} src="/images/placeholder.jpeg" className="shimmer img-fluid p-1" style={{ opacity: 0.15 }} />)
+                                })
+                            }
+                        </div>
+                    </div>
+                }
+            >
+                <div className="container">
+                    <div className="row row-cols-lg-5 row-cols-md-4 row-cols-2">
+                        {imgs && imgs.map(img => {
+                            return (
+                                <div key={"" + img} class="p-1 grow-cc show-cc">
+                                    <img id={"placeholder " + img} src="/images/placeholder.jpeg" className="shimmer img-fluid" style={{ opacity: 0.15 }} />
+                                    <img id={"" + img} src={img} className="img-fluid loading-img" alt="Ceramic Art Piece" draggable="false" onClick={() => onClickImg(img)} onLoad={() => removeLoader(img)} />
+                                </div>
+                            )
+                        })
+                        }
+                    </div>
+                    <hr class="mb-4" />
+                </div>
+            </InfiniteScroll>
+
+        </>
+
+    )
+}
+
+export default Archive

@@ -1,0 +1,51 @@
+@keyframes shimmer {
+  100% {
+    -webkit-mask-position: left;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.shimmer {
+  color: #1b1b1b;
+  display: inline-block;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300%
+    100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  font-size: 50px;
+  max-width: 200px;
+  animation: shimmer 2.5s infinite;
+  -webkit-animation: shimmer 2.5s infinite;
+  -moz-animation: shimmer 2.5s infinite;
+  -o-animation: shimmer 2.5s infinite;
+  -ms-animation: shimmer 2.5s infinite;
+}
+.grow-cc {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.grow-cc:hover {
+  transform: scale(1.02);
+}
+.scroll-top-button {
+  visibility: hidden;
+  border-radius: 0 !important;
+  top: 10rem;
+  right: 0rem;
+  z-index: 2;
+  background-color: #1b1b1b93 !important;
+}
+.show-cc {
+  visibility: visible !important;
+  animation: 2s fadeIn;
+  animation-fill-mode: forwards;
+}
+.loading-img {
+  display: none;
+}
