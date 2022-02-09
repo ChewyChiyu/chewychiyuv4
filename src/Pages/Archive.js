@@ -41,19 +41,19 @@ const Archive = () => {
                 <meta name="title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
 
                 <meta name="description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
-
+                
                 <meta property="og:url" content="https://chewychiyu.com/" />
                 <meta property="og:type" content="website" />
                 <meta property="og:title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
                 <meta property="og:description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
-                <meta property="og:image" content="https://chewychiyu.com/images/websiteIcon.jpeg" />
+                <meta property="og:image" content="https://chewychiyu.com/images/Banners/homepage-banner.JPG" />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta property="twitter:domain" content="chewychiyu.com" />
                 <meta property="twitter:url" content="https://www.chewychiyu.com" />
                 <meta name="twitter:title" content="CHEWYCHIYU | An Exhibition Of Artworks | Functional Contemporary Ceramic Art " />
                 <meta name="twitter:description" content="CHEWYCHIYU | Chiyu - Exhibits Functional Contemporary Ceramic Art Pieces. Discover An Inspiring Art Style. Explore An Extensive Collection of Works. " />
-                <meta name="twitter:image" content="https://chewychiyu.com/images/websiteIcon.jpeg" />
+                <meta name="twitter:image" content="https://chewychiyu.com/images/Banners/homepage-banner.JPG" />
 
                 <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
             </Helmet>
