@@ -20,11 +20,11 @@ const Archive = () => {
 
     function fetchData() {
         var fetchCount = Math.min(count, maxCount - imgs.length)
-        var nextBatch = Array.from(Array(fetchCount).keys()).map(i => { return "images/SmallAssests/no" + (imgs.length + i) + " Small.jpeg" })
+        var nextBatch = Array.from(Array(fetchCount).keys()).map(i => { return "/images/SmallAssests/no" + (imgs.length + i) + " Small.jpeg" })
         setImgs([...imgs].concat([...nextBatch]))
     }
     function onClickImg(img) {
-        setClickedImg("images/Assests/no" + ("" + img).replace(/[^0-9]/g, '') + ".jpeg")
+        setClickedImg("/images/Assests/no" + ("" + img).replace(/[^0-9]/g, '') + ".jpeg")
         setShowModal(true)
     }
 
