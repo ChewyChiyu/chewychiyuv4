@@ -10,7 +10,7 @@ const Archive = () => {
     const [showModal, setShowModal] = useState(false)
     const [imgs, setImgs] = useState([])
     const count = 20
-    const maxCount = 197
+    const maxCount = 204
 
 
     useEffect(() => {
